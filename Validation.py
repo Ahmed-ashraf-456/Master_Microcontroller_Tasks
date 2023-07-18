@@ -79,7 +79,7 @@ class ValidationAndPloting:
             return self.check_domanin_excepted_validation(excepted_Points, "excepted")
     
     def Get_Result(self):
-        return self.is_equation_valid(self.equation), self.check_domanin_excepted_validation(self.domain, "domain"),self.check_excepted_Points(self.excepted_Points )
+            return self.is_equation_valid(self.equation), self.check_domanin_excepted_validation(self.domain, "domain"),self.check_excepted_Points(self.excepted_Points )
     
 
 

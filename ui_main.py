@@ -142,7 +142,7 @@ class Ui_MainWindow(object):
         self.Submit.setSizePolicy(sizePolicy1)
         self.Submit.setMinimumSize(QSize(0, 40))
         self.Submit.setStyleSheet(u"QPushButton {\n"
-                                  "	color: rgb(255, 255, 255);\n"
+                                  " 	color: rgb(255, 255, 255);\n"
                                   "	background-color: rgb(35, 35, 35);\n"
                                   "	border: 0px solid;\n"
                                   "}\n"

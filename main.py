@@ -142,7 +142,7 @@ class MainWindow(QMainWindow):
             for point in excepted_Points:
                 ax.plot(point, function(point), 'o',
                         markerfacecolor='white', markersize=8)
-                
+
         
         ax.plot(x_values, y_values)
         ax.set_xlabel('x')
