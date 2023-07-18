@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'ui_mainUFTjFg.ui'
+## Form generated from reading UI file 'ui_mainrSmxAB.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -17,7 +17,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1000, 500)
+        MainWindow.resize(1188, 568)
         MainWindow.setMinimumSize(QSize(1000, 500))
         MainWindow.setStyleSheet(u"background-color: rgb(45, 45, 45);")
         self.centralwidget = QWidget(MainWindow)
@@ -28,6 +28,12 @@ class Ui_MainWindow(object):
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
         self.Top_Bar = QFrame(self.centralwidget)
         self.Top_Bar.setObjectName(u"Top_Bar")
+        sizePolicy = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(
+            self.Top_Bar.sizePolicy().hasHeightForWidth())
+        self.Top_Bar.setSizePolicy(sizePolicy)
         self.Top_Bar.setMaximumSize(QSize(16777215, 40))
         self.Top_Bar.setStyleSheet(u"background-color: rgb(35, 35, 35);")
         self.Top_Bar.setFrameShape(QFrame.NoFrame)
@@ -49,9 +55,6 @@ class Ui_MainWindow(object):
         self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
         self.Btn_Toggle = QPushButton(self.frame_toggle)
         self.Btn_Toggle.setObjectName(u"Btn_Toggle")
-        sizePolicy = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(
             self.Btn_Toggle.sizePolicy().hasHeightForWidth())
         self.Btn_Toggle.setSizePolicy(sizePolicy)
@@ -142,7 +145,7 @@ class Ui_MainWindow(object):
         self.Submit.setSizePolicy(sizePolicy1)
         self.Submit.setMinimumSize(QSize(0, 40))
         self.Submit.setStyleSheet(u"QPushButton {\n"
-                                  " 	color: rgb(255, 255, 255);\n"
+                                  "	color: rgb(255, 255, 255);\n"
                                   "	background-color: rgb(35, 35, 35);\n"
                                   "	border: 0px solid;\n"
                                   "}\n"
@@ -237,12 +240,22 @@ class Ui_MainWindow(object):
         self.frame_pages.setFrameShadow(QFrame.Raised)
         self.verticalLayout_5 = QVBoxLayout(self.frame_pages)
         self.verticalLayout_5.setObjectName(u"verticalLayout_5")
-        self.Matplotlip_Image = QFrame(self.frame_pages)
-        self.Matplotlip_Image.setObjectName(u"Matplotlip_Image")
-        self.Matplotlip_Image.setFrameShape(QFrame.StyledPanel)
-        self.Matplotlip_Image.setFrameShadow(QFrame.Raised)
+        self.Layout_image = QVBoxLayout()
+        self.Layout_image.setObjectName(u"Layout_image")
+        self.Layout_image.setSizeConstraint(QLayout.SetMaximumSize)
+        self.widget_image = QWidget(self.frame_pages)
+        self.widget_image.setObjectName(u"widget_image")
+        self.image_label = QLabel(self.widget_image)
+        self.image_label.setObjectName(u"image_label")
+        self.image_label.setGeometry(QRect(10, 10, 921, 481))
+        sizePolicy.setHeightForWidth(
+            self.image_label.sizePolicy().hasHeightForWidth())
+        self.image_label.setSizePolicy(sizePolicy)
+        self.image_label.setAlignment(Qt.AlignCenter)
 
-        self.verticalLayout_5.addWidget(self.Matplotlip_Image)
+        self.Layout_image.addWidget(self.widget_image)
+
+        self.verticalLayout_5.addLayout(self.Layout_image)
 
         self.horizontalLayout_2.addWidget(self.frame_pages)
 
@@ -275,4 +288,5 @@ class Ui_MainWindow(object):
             "MainWindow", u"End X", None))
         self.error_equation.setText("")
         self.error_except.setText("")
+        self.image_label.setText("")
     # retranslateUi

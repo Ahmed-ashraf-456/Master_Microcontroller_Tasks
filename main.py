@@ -56,8 +56,9 @@ class MainWindow(QMainWindow):
         Excepted_x_input = self.findChild(QLineEdit, "Excepted_x_input").text()
 
         validation= ValidationAndPloting(Equation, domain, Excepted_x_input)
-        Equation_valid, Domain_valid, Excepted_x_valid = validation.Get_Result()
+        [Equation_valid, Domain_valid, Excepted_x_valid] = validation.Get_Result()
         
+
         if not Equation_valid:
             self.findChild(QLineEdit, "Equation_input").setStyleSheet(
                 "border: 2px solid red; ; background-color: rgb(255, 255, 255);")
@@ -66,43 +67,34 @@ class MainWindow(QMainWindow):
             # Change the height of the label
             self.ui.error_equation.setFixedHeight(30)
             # Change the text of the label
-            self.ui.error_equation.setText("Invalid Eqution please try again")
-
-            self.findChild(QLineEdit, "Start_x_input").setStyleSheet(
+            self.ui.error_equation.setText("Invalid inputs please try again")
+        else : 
+            self.findChild(QLineEdit, "Equation_input").setStyleSheet(
                 "border: 2px solid white; ; background-color: rgb(255, 255, 255);")
-            self.findChild(QLineEdit, "End_x_input").setStyleSheet(
-                "border: 2px solid white; ; background-color: rgb(255, 255, 255);")
-            self.ui.error_domain.setFixedHeight(0)
-
-            self.findChild(QLineEdit, "Excepted_x_input").setStyleSheet(
-                "border: 2px solid white; ; background-color: rgb(255, 255, 255);")
-            self.ui.error_except.setFixedHeight(30)
-
-
-
-        elif not Domain_valid:
-
+            self.ui.error_equation.setFixedHeight(0)
+        
+        if not Domain_valid:
             self.findChild(QLineEdit, "Start_x_input").setStyleSheet(
                 "border: 2px solid red; ; background-color: rgb(255, 255, 255);")
             self.findChild(QLineEdit, "End_x_input").setStyleSheet(
                 "border: 2px solid red; ; background-color: rgb(255, 255, 255);")
-            
+
             # Change the stylesheet of the label
             self.ui.error_domain.setStyleSheet("color: red; ")
             # Change the height of the label
             self.ui.error_domain.setFixedHeight(30)
             # Change the text of the label
-            self.ui.error_domain.setText("Invalid domain please try again")
+            self.ui.error_domain.setText("Invalid inputs please try again")
 
-            self.findChild(QLineEdit, "Equation_input").setStyleSheet(
+        else :
+            self.findChild(QLineEdit, "Start_x_input").setStyleSheet(
                 "border: 2px solid white; ; background-color: rgb(255, 255, 255);")
-            self.ui.error_equation.setFixedHeight(30)
+            self.findChild(QLineEdit, "End_x_input").setStyleSheet(
+                "border: 2px solid white; ; background-color: rgb(255, 255, 255);")
+            
+            self.ui.error_domain.setFixedHeight(0)
 
-            self.ui.error_except.setFixedHeight(30)
-
-
-
-        elif Excepted_x_valid != None and Excepted_x_valid == False:
+        if Excepted_x_valid != None and Excepted_x_valid == False:
             self.findChild(QLineEdit, "Excepted_x_input").setStyleSheet(
                 "border: 2px solid red; ; background-color: rgb(255, 255, 255);")
 
@@ -112,11 +104,25 @@ class MainWindow(QMainWindow):
             self.ui.error_except.setFixedHeight(30)
             # Change the text of the label
             self.ui.error_except.setText(
-                "Invalid Excepted Points please try again")
-            
-        else :
+                "Invalid inputs please try again")
+        
+        else : 
+            self.findChild(QLineEdit, "Excepted_x_input").setStyleSheet(
+                "border: 2px solid white; ; background-color: rgb(255, 255, 255);")
+            self.ui.error_except.setFixedHeight(0)
+
+
+        if Equation_valid and Domain_valid and (Excepted_x_valid or Excepted_x_valid == None):
             self.plot_equation(Equation.replace("^", "**"),
-                               Domain_valid, Excepted_x_valid)
+                            Domain_valid, Excepted_x_valid)
+
+            # Load the image using QPixmap
+            pixmap = QPixmap('output/plot.png')
+            self.ui.image_label.setPixmap(pixmap)
+
+            # Create a layout and set it on the widget
+            self.ui.Layout_image.addWidget(self.ui.image_label)
+            self.setLayout(self.ui.Layout_image)
 
 
 
@@ -132,34 +138,24 @@ class MainWindow(QMainWindow):
         y_values = function(x_values)
 
         
-        fig = Figure(figsize=(5, 4), dpi=100)
+        fig = Figure( dpi=100)
         ax = fig.add_subplot(111)
 
-        ax.clear()
         # Plot the equation
 
+
+
+        ax.plot(x_values, y_values)
         if excepted_Points:
             for point in excepted_Points:
                 ax.plot(point, function(point), 'o',
                         markerfacecolor='white', markersize=8)
-
-        
-        ax.plot(x_values, y_values)
         ax.set_xlabel('x')
         ax.set_ylabel('y')
         ax.set_title('Plot of Equation')
         ax.grid(True)
 
-        # Create a FigureCanvas for the figure
-        canvas = FigureCanvas(fig)
-        layout = QVBoxLayout(self.ui.Matplotlip_Image)
-        layout.addWidget(canvas)
-
-
-
-
-
-
+        fig.savefig('output/plot.png')
 
 
 

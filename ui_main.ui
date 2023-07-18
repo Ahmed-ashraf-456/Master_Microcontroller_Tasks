@@ -6,12 +6,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1000</width>
-    <height>500</height>
+    <width>1188</width>
+    <height>568</height>
    </rect>
   </property>
   <property name="minimumSize">
-   <size> 
+   <size>
     <width>1000</width>
     <height>500</height>
    </size>
@@ -41,6 +41,12 @@
     </property>
     <item>
      <widget class="QFrame" name="Top_Bar">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
       <property name="maximumSize">
        <size>
         <width>16777215</width>
@@ -500,14 +506,37 @@ QPushButton:hover {
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_5">
           <item>
-           <widget class="QFrame" name="Matplotlip_Image">
-            <property name="frameShape">
-             <enum>QFrame::StyledPanel</enum>
+           <layout class="QVBoxLayout" name="Layout_image">
+            <property name="sizeConstraint">
+             <enum>QLayout::SetMaximumSize</enum>
             </property>
-            <property name="frameShadow">
-             <enum>QFrame::Raised</enum>
-            </property>
-           </widget>
+            <item>
+             <widget class="QWidget" name="widget_image" native="true">
+              <widget class="QLabel" name="image_label">
+               <property name="geometry">
+                <rect>
+                 <x>10</x>
+                 <y>10</y>
+                 <width>921</width>
+                 <height>481</height>
+                </rect>
+               </property>
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </widget>
+            </item>
+           </layout>
           </item>
          </layout>
         </widget>
