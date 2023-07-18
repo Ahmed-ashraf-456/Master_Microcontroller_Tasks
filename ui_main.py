@@ -1,4 +1,12 @@
+# -*- coding: utf-8 -*-
 
+################################################################################
+## Form generated from reading UI file 'ui_mainUFTjFg.ui'
+##
+## Created by: Qt User Interface Compiler version 5.15.2
+##
+## WARNING! All changes made in this file will be lost when recompiling UI file!
+################################################################################
 
 from PySide2.QtCore import *
 from PySide2.QtGui import *
@@ -95,7 +103,7 @@ class Ui_MainWindow(object):
         self.label_2.setAlignment(Qt.AlignCenter)
         self.label_2.setMargin(3)
 
-        self.gridLayout.addWidget(self.label_2, 3, 0, 1, 1)
+        self.gridLayout.addWidget(self.label_2, 4, 0, 1, 1)
 
         self.End_x_input = QLineEdit(self.frame_left_menu)
         self.End_x_input.setObjectName(u"End_x_input")
@@ -104,7 +112,7 @@ class Ui_MainWindow(object):
             u"background-color: rgb(255, 255, 255);")
         self.End_x_input.setAlignment(Qt.AlignCenter)
 
-        self.gridLayout.addWidget(self.End_x_input, 6, 0, 1, 1)
+        self.gridLayout.addWidget(self.End_x_input, 7, 0, 1, 1)
 
         self.label = QLabel(self.frame_left_menu)
         self.label.setObjectName(u"label")
@@ -117,6 +125,12 @@ class Ui_MainWindow(object):
         self.label.setIndent(-1)
 
         self.gridLayout.addWidget(self.label, 1, 0, 1, 1)
+
+        self.error_domain = QLabel(self.frame_left_menu)
+        self.error_domain.setObjectName(u"error_domain")
+        self.error_domain.setMaximumSize(QSize(250, 0))
+
+        self.gridLayout.addWidget(self.error_domain, 8, 0, 1, 1)
 
         self.Submit = QPushButton(self.frame_left_menu)
         self.Submit.setObjectName(u"Submit")
@@ -136,7 +150,7 @@ class Ui_MainWindow(object):
                                   "	background-color: rgb(85, 170, 255);\n"
                                   "}")
 
-        self.gridLayout.addWidget(self.Submit, 9, 0, 1, 1)
+        self.gridLayout.addWidget(self.Submit, 12, 0, 1, 1)
 
         self.Start_x_input = QLineEdit(self.frame_left_menu)
         self.Start_x_input.setObjectName(u"Start_x_input")
@@ -145,7 +159,7 @@ class Ui_MainWindow(object):
             u"background-color: rgb(255, 255, 255);")
         self.Start_x_input.setAlignment(Qt.AlignCenter)
 
-        self.gridLayout.addWidget(self.Start_x_input, 4, 0, 1, 1)
+        self.gridLayout.addWidget(self.Start_x_input, 5, 0, 1, 1)
 
         self.label_4 = QLabel(self.frame_left_menu)
         self.label_4.setObjectName(u"label_4")
@@ -155,7 +169,7 @@ class Ui_MainWindow(object):
         self.label_4.setAlignment(Qt.AlignCenter)
         self.label_4.setMargin(3)
 
-        self.gridLayout.addWidget(self.label_4, 7, 0, 1, 1)
+        self.gridLayout.addWidget(self.label_4, 9, 0, 1, 1)
 
         self.Equation_input = QLineEdit(self.frame_left_menu)
         self.Equation_input.setObjectName(u"Equation_input")
@@ -180,7 +194,7 @@ class Ui_MainWindow(object):
         self.label_3.setAlignment(Qt.AlignCenter)
         self.label_3.setMargin(3)
 
-        self.gridLayout.addWidget(self.label_3, 5, 0, 1, 1)
+        self.gridLayout.addWidget(self.label_3, 6, 0, 1, 1)
 
         self.Excepted_x_input = QLineEdit(self.frame_left_menu)
         self.Excepted_x_input.setObjectName(u"Excepted_x_input")
@@ -189,7 +203,18 @@ class Ui_MainWindow(object):
             u"background-color: rgb(255, 255, 255);")
         self.Excepted_x_input.setAlignment(Qt.AlignCenter)
 
-        self.gridLayout.addWidget(self.Excepted_x_input, 8, 0, 1, 1)
+        self.gridLayout.addWidget(self.Excepted_x_input, 10, 0, 1, 1)
+
+        self.error_equation = QLabel(self.frame_left_menu)
+        self.error_equation.setObjectName(u"error_equation")
+        self.error_equation.setMaximumSize(QSize(250, 0))
+
+        self.gridLayout.addWidget(self.error_equation, 3, 0, 1, 1)
+
+        self.error_except = QLabel(self.frame_left_menu)
+        self.error_except.setObjectName(u"error_except")
+
+        self.gridLayout.addWidget(self.error_except, 11, 0, 1, 1)
 
         self.verticalLayout_3.addLayout(self.gridLayout)
 
@@ -239,6 +264,7 @@ class Ui_MainWindow(object):
             "MainWindow", u"start x", None))
         self.label.setText(QCoreApplication.translate(
             "MainWindow", u"Equation", None))
+        self.error_domain.setText("")
         self.Submit.setText(QCoreApplication.translate(
             "MainWindow", u"Submit", None))
         self.label_4.setText(QCoreApplication.translate(
@@ -247,4 +273,6 @@ class Ui_MainWindow(object):
         self.Equation_input.setText("")
         self.label_3.setText(QCoreApplication.translate(
             "MainWindow", u"End X", None))
+        self.error_equation.setText("")
+        self.error_except.setText("")
     # retranslateUi
